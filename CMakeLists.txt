@@ -21,7 +21,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin/)
 
 # Find packages
 # Docs only available if this is the main app
-find_package(Doxygen)
+# find_package(Doxygen)
 # if(Doxygen_FOUND)
 #     add_subdirectory(./docs)
 # else()
@@ -44,13 +44,6 @@ add_subdirectory(./apps/)
 add_subdirectory(./libs/helloworld/)
 add_subdirectory(./libs/computepi/)
 add_subdirectory(./libs/random/)
-
-# Link external libraries
-# target_link_libraries(${PROJECT_NAME} MPI::MPI_C)
-
-# Test
-include(CTest)
-# add_test(NAME appTest COMMAND app)
 
 # Messages
 message("CMAKE source directory = " ${CMAKE_SOURCE_DIR})
