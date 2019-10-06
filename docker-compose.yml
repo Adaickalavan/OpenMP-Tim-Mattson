@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  hpc:
+    image: openmp
+    container_name: openmp   
+    restart: on-failure #Ensures that intermittent failures in the Docker environment do not result in unnecessary failures of the service.
+    # Name of executable to be run
+    # command: /src/bin/tutorial
+    # command: /src/bin/mandel
+    # command: /src/bin/linked
+    # command: /src/bin/prodCons
+    command: /src/bin/pi_mc
