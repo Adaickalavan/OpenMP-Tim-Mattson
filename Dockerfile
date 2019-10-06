@@ -4,7 +4,7 @@ FROM ubuntu AS buildstage
 # Install build tools
 RUN apt-get update --fix-missing && apt-get upgrade -y
 RUN apt-get -y install \
-    cmake pkg-config doxygen \
+    cmake pkg-config \
     libopenmpi-dev
 
 # Change working directory
@@ -25,16 +25,3 @@ RUN cmake -E make_directory build && \
 #     ldd linked && \
 #     ldd prodCons && \
 #     ldd pi_mc
-
-# # Multistage build
-# FROM alpine AS runtime
-
-# # Label
-# LABEL author Adaickalavan
-
-# # Copy needed source
-# COPY --from=buildstage /src/build /src/build/
-# COPY --from=buildstage /src/bin /src/bin/
-
-# # Command to execute when the image loads
-# ENTRYPOINT ["/src/bin/tutorial"]
