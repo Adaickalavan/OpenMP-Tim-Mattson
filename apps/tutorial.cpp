@@ -3,9 +3,6 @@
 #include "computepi.h"
 
 int main(int argc, char* argv[]){
-   
-    const char* s = getenv("ENVVAR");
-    printf("%s\n",s);
 
     // Slide 38 - Parallel 'Hello World' program
     helloWorld helloWorldInst;

@@ -75,11 +75,6 @@ Results:
 
    As a point of reference, the first 7 digits of the true value of pi 
    is 3.141592 
-
-
-History: 
-   Written by Tim Mattson, 9/2007.
-
 */
 
 #include <stdio.h>

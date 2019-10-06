@@ -146,24 +146,3 @@ double computepi::runPiWorkSharing(int numSteps){
     printf("computePi.runPiWorkSharing(). Pi = %f. Time = %f sec\n", pi, totalTime);
     return pi;
 }
-
-double computepi::runPiTest(int numSteps){
-    double pi, sum = 0.0;
-    double step = 1.0/double(numSteps);
-
-    double startTime = omp_get_wtime();
-    #pragma omp parallel
-    {
-        double x;
-        #pragma omp for lastprivate(sum) 
-        for (int ii = 0; ii < numSteps; ii++){
-            x = (ii + 0.5)*step;
-            sum = sum + 4.0/(1.0+x*x);
-        }
-    }
-    double totalTime = omp_get_wtime() - startTime;
-    pi = step * sum;
-    
-    printf("computePi.runPiTest(). Pi = %f. Time = %f sec\n", pi, totalTime);
-    return pi;
-}
